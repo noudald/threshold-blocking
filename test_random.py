@@ -1,4 +1,5 @@
 import numpy as np
+
 from scipy.spatial import distance_matrix
 
 from thresholdblocking import threshold_blocking
