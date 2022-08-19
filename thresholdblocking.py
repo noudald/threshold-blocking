@@ -3,9 +3,9 @@ import numpy as np
 from scipy.spatial import distance_matrix
 from tqdm import tqdm
 
-ns = 20
+ns = 100
 nf = 2
-k = 2
+k = 10
 
 rng = np.random.RandomState(37)
 data = rng.uniform(0, 1, size=(ns, nf))
@@ -28,7 +28,6 @@ def threshold_blocking(cost, k):
 
     # Step 2.a: Create second power graph
     edges_2 = edges.copy()
-
     for v0 in tqdm(vertices, bar_format='Calculate second power graph                {l_bar}{bar:10}{r_bar}{bar:-10b}'):
         for v1 in [v for v in vertices if v > v0]:
             if edges[v0, v1] == 1:
