@@ -5,7 +5,7 @@ from scipy.spatial import distance_matrix
 from thresholdblocking import threshold_blocking
 
 
-ns = 100
+ns = 2*10**3
 nf = 2
 k = 10
 
@@ -23,13 +23,13 @@ def within_distance(block):
 def block_distance(block1, block2):
     return np.mean(cost[block1, :][:, block2])
 
-for block in blocks:
-    print(
-        block,
-        'size',
-        len(block),
-        round(within_distance(block), 4),
-    )
+# for block in blocks:
+#     print(
+#         block,
+#         'size',
+#         len(block),
+#         round(within_distance(block), 4),
+#     )
 
 inner_distance = [within_distance(block) for block in blocks]
 
