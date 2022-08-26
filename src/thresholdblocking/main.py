@@ -4,6 +4,9 @@ from tqdm import tqdm
 
 
 def threshold_blocking(cost, k):
+    if isinstance(cost, list):
+        cost = np.array(cost)
+
     pbar = tqdm(
         total=5*cost.shape[0],
         bar_format='{l_bar}{bar:10}{r_bar}{bar:-10b}',
