@@ -27,6 +27,8 @@ def test_complex_case():
     rng = np.random.RandomState(37)
     x = rng.uniform(0, 1, size=(100, 100))
     cost = x @ x.T
+    for i in range(100):
+        cost[i, i] = 0.0
 
     blocks = threshold_blocking(cost, 10)
     assert len(blocks) > 8
