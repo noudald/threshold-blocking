@@ -78,7 +78,7 @@ def threshold_blocking(cost, k):
     def distance(v, block):
         return np.mean(cost[v, block])
 
-    pbar_step = len(vertices) // len(unassigned)
+    pbar_step = len(vertices) // len(unassigned) if len(unassigned) > 0 else 0
     for v in unassigned:
         i = np.argmin([distance(v, block) for block in blocks])
         blocks[i].append(v)
