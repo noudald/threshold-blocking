@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thresholdblocking"
+version = "0.0.1"
+authors = [
+    { name="Noud Aldenhoven", email="noud.aldenhoven@gmail.com" },
+]
+dependencies = [
+    "numpy",
+    "tqdm"
+]
+description = "Python implementation of Higgins et al Threshold Blocking algorithm"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[projects.urls]
+"Homepage" = "https://github.com/noudald/threshold-blocking"
+"Bug Tracker" = "https://github.com/noudald/threshold-blocking/issues"
